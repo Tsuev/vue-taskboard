@@ -1,6 +1,6 @@
 <template>
     <nav class="navbar navbar-expand navbar-light navbar-bg">
-        <a class="sidebar-toggle" @click="check">
+        <a class="sidebar-toggle">
             <i class="hamburger align-self-center" />
         </a>
         <div class="navbar-collapse collapse">
