@@ -34,9 +34,7 @@ export default {
     },
     actions: {
         addColumn(ctx, options){
-            ctx.commit(
-                'updateColumn', options
-            )
+            ctx.commit('updateColumn', options)
         }
     },
     getters: {
