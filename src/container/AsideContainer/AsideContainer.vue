@@ -13,13 +13,13 @@
             >
               <div class="simplebar-content" style="padding: 0px">
                 <!-- svelte-ignore a11y-missing-attribute -->
-                <a @click='$router.push({name: "home"})' class="sidebar-brand">
-                  <img src="@/assets/img/logo.png" width="160px" alt="" />
-                </a>
+                <Logo />
 
                 <!-- Для того кто сел читать мой код, всё происходит здесь -->
                 <ul class="sidebar-nav mt-3">
-                  <li class="sidebar-header">Aside</li>
+                  <li v-for="item in nav" :key="item.id" class="sidebar-link">
+                    {{item.title}}
+                  </li>
                 </ul>
                 <!-- Для того кто сел читать мой код, всё происходит здесь -->
               </div>
@@ -53,10 +53,44 @@
     </div>
   </nav>
 </template>
-
+<style scoped>
+  .sidebar-link {
+    font-size: 1rem;
+  }
+</style>
 <script>
+import Logo from '@/components/Logo/Logo.vue'
 export default {
-
+  name: 'Aside',
+  components: {
+    Logo
+  },
+  data() {
+    return {
+      nav: [
+        {
+          id: 1,
+          title: 'Проекты',
+          link: '',
+        },
+        {
+          id: 2,
+          title: 'Команды',
+          link: '',
+        },
+        {
+          id: 3,
+          title: '',
+          link: '',
+        },
+        {
+          id: 4,
+          title: '',
+          link: '',
+        },
+      ]
+    }
+  }
 };
 </script>
 
